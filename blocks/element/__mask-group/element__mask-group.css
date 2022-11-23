@@ -1,0 +1,9 @@
+.element__mask-group {
+  max-width: 246px;
+  min-height: 23px;
+  margin: 0;
+  padding: 25px 20px 25px 21px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
