@@ -1,7 +1,7 @@
 .profile__container {
   display: flex;
   margin-left: 30px;
-  column-gap: 286px;
+  column-gap: 244px;
 }
 
 @media screen and (max-width: 320px) {

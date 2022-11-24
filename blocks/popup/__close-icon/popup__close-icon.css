@@ -13,3 +13,13 @@
   opacity: .6;
   cursor: pointer;
 }
+
+@media screen and (max-width: 320px) {
+  .popup__close-icon {
+    background-image: url(../../../images/Close-Icon_for_320.svg);
+    width: 20px;
+    height: 20px;
+    top: 87px;
+    right: 19px;
+  }
+}
