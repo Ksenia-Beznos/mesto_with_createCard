@@ -5,6 +5,19 @@
   display: block;
 }
 
+@media screen and (max-width: 800px) {
+  .profile__avatar {
+    display: flex;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 624px) {
+  .profile__avatar {
+    display: flex;
+    align-self: center;
+  }
+}
 
 @media screen and (max-width: 320px) {
   .profile__avatar {

@@ -14,9 +14,24 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 800px) {
   .profile__add-button {
     background-image: url(../../../images/Add-Button_for_320.svg);
+    width: 282px;
+  }
+}
+
+@media screen and (max-width: 624px) {
+  .profile__add-button {
+    background-image: url(../../../images/Add-Button_for_320.svg);
+    padding: 0;
+    width: 282px;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile__add-button {
     padding: 0;
     width: 282px;
   }

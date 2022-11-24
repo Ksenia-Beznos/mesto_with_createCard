@@ -7,10 +7,23 @@
   line-height: 1.1;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 624px) {
+  .profile__title {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+}
+
+@media screen and (max-width: 430px) {
   .profile__title {
     font-size: 27px;
     line-height: 1.2;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .profile__title {
+    font-size: 27px;
     padding-bottom: 10px;
   }
 }

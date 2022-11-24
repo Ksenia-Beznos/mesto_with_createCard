@@ -15,7 +15,13 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 624px) {
+  .profile__edit-button {
+    top: 6px;
+  }
+}
+
+@media screen and (max-width: 430px) {
   .profile__edit-button {
     background-image: url(../../../images/Edit-Button_for_320.svg);
     width: 18px;
