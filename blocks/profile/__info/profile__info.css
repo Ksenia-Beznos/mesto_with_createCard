@@ -1,6 +1,6 @@
 .profile__info {
   color: white;
-  margin: 22px auto 25px 0;
+  margin: 23px auto 25px 0;
   position: relative;
   width: 336px;
 }
@@ -23,6 +23,5 @@
 
 @media screen and (max-width: 320px) {
   .profile__info {
-    margin-top: 25px;
   }
 }

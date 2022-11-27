@@ -12,7 +12,6 @@
 
   <header class="header">
     <img class="header__logo" src="./images/Logo.svg" alt="Логотип Mesto">
-    <div class="header__line"></div>
   </header>
 
   <main class="content">
@@ -23,9 +22,9 @@
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <p class="profile__subtitle">Исследователь океана</p>
-          <button class="profile__edit-button" type="button"></button>
+          <button class="profile__edit-button" type="button" aria-label="Изменить"></button>
         </div>
-      <button class="profile__add-button" type="button"></button>
+      <button class="profile__add-button" type="button" aria-label="Добавить"></button>
       </div>
     </section>
 
@@ -35,7 +34,7 @@
           <img class="element__image" src="./images/photo-karachaevsk.jpg" alt="Вид на крепость в горах">
           <div class="element__mask-group">
             <h2 class="element__title">Карачаевск</h2>
-            <button class="element__heart-button" type="button"></button>
+            <button class="element__heart-button" type="button" aria-label="Нравится"></button>
           </div>
         </li>
 
@@ -43,7 +42,7 @@
           <img class="element__image" src="./images/photo-elbrus.jpg" alt="Вид на гору Эльбрус на рассвете">
           <div class="element__mask-group">
             <h2 class="element__title">Гора Эльбрус</h2>
-            <button class="element__heart-button" type="button"></button>
+            <button class="element__heart-button" type="button" aria-label="Нравится"></button>
           </div>
         </li>
 
@@ -51,7 +50,7 @@
           <img class="element__image" src="./images/photo-dombai.jpg" alt="Вид на заснеженные горы Домбая">
           <div class="element__mask-group">
             <h2 class="element__title">Домбай</h2>
-            <button class="element__heart-button" type="button"></button>
+            <button class="element__heart-button" type="button" aria-label="Нравится"></button>
           </div>
         </li>
 
@@ -59,7 +58,7 @@
           <img class="element__image" src="./images/photo-alania.png" alt="Вид на слегка заснеженные горы">
           <div class="element__mask-group">
             <h2 class="element__title">Алания</h2>
-            <button class="element__heart-button" type="button"></button>
+            <button class="element__heart-button" type="button" aria-label="Нравится"></button>
           </div>
         </li>
 
@@ -67,7 +66,7 @@
           <img class="element__image" src="./images/photo-baikal.png" alt="Вид на замёрзшее озеро Байкал и горы">
           <div class="element__mask-group">
             <h2 class="element__title">Байкал</h2>
-            <button class="element__heart-button" type="button"></button>
+            <button class="element__heart-button" type="button" aria-label="Нравится"></button>
           </div>
         </li>
 
@@ -75,7 +74,7 @@
           <img class="element__image" src="./images/photo-karelia.png" alt="Вид на озеро в Карелии и осенний лес на скале">
           <div class="element__mask-group">
             <h2 class="element__title">Карелия</h2>
-            <button class="element__heart-button" type="button"></button>
+            <button class="element__heart-button" type="button" aria-label="Нравится"></button>
           </div>
         </li>
       </ul>
@@ -89,13 +88,13 @@
 
   <div class="popup">
     <div class="popup__container">
-    <button class="popup__close-icon" type="button"></button>
+    <button class="popup__close-icon" type="button" aria-label="Закрыть"></button>
     <h2 class="popup__heading">Редактировать профиль</h2>
-      <form class="popup__form">
+      <form class="popup__form" name="profile__form">
         <input class="popup__input popup__input_type_name" type="text" name="nameInput" placeholder="Имя">
         <input class="popup__input popup__input_type_job" type="text" name="jobInput" placeholder="О себе">
+        <button class="popup__submit-button" type="submit" aria-label="Сохранить">Сохранить</button>
       </form>
-    <button class="popup__submit-button" type="submit">Сохранить</button>
   </div>
   </div>
 </div>
