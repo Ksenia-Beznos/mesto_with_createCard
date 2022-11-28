@@ -1,4 +1,6 @@
 .element__heart-button {
+  padding: 0;
+  padding-left: 22px;
   background-image: url(../../../images/Heart.svg);
   background-repeat: no-repeat;
   outline: none;
