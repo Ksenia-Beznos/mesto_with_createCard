@@ -1,4 +1,4 @@
-const popup = document.querySelector('.popup'); //попап
+const popup = document.querySelector('.popup'); //попап для рекдактирования текстовой информации
 const openButton = document.querySelector('.profile__edit-button'); //кнопка открытия
 const closeButton = document.querySelector('.popup__close-icon'); //кнопка закрытия
 
@@ -9,7 +9,6 @@ const titleProfile = document.querySelector('.profile__title');
 const subtitleProfile = document.querySelector('.profile__subtitle');
 
 const formElement = document.querySelector('.popup__form');
-
 
 openButton.addEventListener('click', function() {
   popup.classList.add('popup_opened');
@@ -29,6 +28,35 @@ function formSubmitHandler (evt) {
 }
 
 formElement.addEventListener('submit', formSubmitHandler);
+
+//==================================
+
+const popupCards = document.querySelector('.popup-cards'); //попап для рекдактирования фото
+const openButtonCards = document.querySelector('.profile__add-button'); //кнопка открытия
+const closeButtonCards = document.querySelector('.popup-cards__close-icon'); //кнопка закрытия
+
+const titleInput = document.querySelector('.popup-cards__input_type_title');
+const linkInput = document.querySelector('.popup-cards__input_type_link');
+
+const formElementCards = document.querySelector('.popup-cards__form');
+
+openButtonCards.addEventListener('click', function() {
+  popupCards.classList.add('popup-cards_opened');
+});
+
+closeButtonCards.addEventListener('click', function() {
+  popupCards.classList.remove('popup-cards_opened');
+});
+
+function formSubmitHandler (evt) {
+  evt.preventDefault();
+  // titleProfile.textContent = nameInput.value;
+  // subtitleProfile.textContent = jobInput.value;
+  popupCards.classList.remove('popup-cards_opened');
+}
+
+formElementCards.addEventListener('submit', formSubmitHandler);
+
 
 //==================================
 
