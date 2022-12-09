@@ -29,7 +29,9 @@ function formSubmitHandler (evt) {
 
 formElement.addEventListener('submit', formSubmitHandler);
 
+
 //==================================
+
 
 const popupCards = document.querySelector('.popup-cards'); //попап для рекдактирования фото
 const addButtonCards = document.querySelector('.profile__add-button'); //кнопка открытия
@@ -40,6 +42,8 @@ const linkInput = document.querySelector('.popup-cards__input_type_link');
 
 const formElementCards = document.querySelector('.popup-cards__form');
 
+const cardList = document.querySelector('.element'); //находим список ul с классом element, чтобы туда поместить блок с новой картинкой
+
 addButtonCards.addEventListener('click', function() {
   popupCards.classList.add('popup-cards_opened');
 });
@@ -48,17 +52,19 @@ closeButtonCards.addEventListener('click', function() {
   popupCards.classList.remove('popup-cards_opened');
 });
 
-function formSubmitHandler (evt) {
+function formSubmitHandlerCard (evt) {
   evt.preventDefault();
-  // titleProfile.textContent = nameInput.value;
-  // subtitleProfile.textContent = jobInput.value;
+  const newCard = {text: titleInput.value, link: linkInput.value};
+  const cardItem = createCard(newCard);
+  cardList.prepend(cardItem);
   popupCards.classList.remove('popup-cards_opened');
 }
 
-formElementCards.addEventListener('submit', formSubmitHandler);
+formElementCards.addEventListener('submit', formSubmitHandlerCard);
 
 
 //==================================
+
 
 const  initialCards = [
   {
@@ -96,10 +102,10 @@ const makeElement = function(tagName, className, text){
 };
 
 const createCard = function(card){
-  const listItem = makeElement('li', 'element__item');//создали новый элемент списка для вставки изображения
+  const listItem = makeElement('li', 'element__item');//создали новый li
 
   const img = makeElement('img', 'element__image'); // создаем переменную для новой карточки
-  img.src = card.link; // добавляем ссыку на карточку
+  img.src = card.link; // добавляем ссылку на карточку
   img.alt = card.text; //добавляем alt
   listItem.appendChild(img); //добавляем внутрь li -> img
 
@@ -122,14 +128,14 @@ const createCard = function(card){
   return listItem;
 };
 
-const cardList = document.querySelector('.element'); //находим список ul с классом element, чтобы туда поместить блок с новой картинкой
-
 for (let i = 0; i < initialCards.length; i ++){
   let cardItem = createCard(initialCards[i]);
   cardList.appendChild(cardItem);
 }
 
+
 // ==============
+
 
 const element = document.querySelector('.element'); //находим родительский элемент
 
