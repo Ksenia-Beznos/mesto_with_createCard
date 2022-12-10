@@ -32,7 +32,6 @@ formElement.addEventListener('submit', formSubmitHandler);
 
 //==================================
 
-
 const popupCards = document.querySelector('.popup-cards'); //попап для рекдактирования фото
 const addButtonCards = document.querySelector('.profile__add-button'); //кнопка открытия
 const closeButtonCards = document.querySelector('.popup-cards__close-icon'); //кнопка закрытия
@@ -42,7 +41,7 @@ const linkInput = document.querySelector('.popup-cards__input_type_link');
 
 const formElementCards = document.querySelector('.popup-cards__form');
 
-const cardList = document.querySelector('.element'); //находим список ul с классом element, чтобы туда поместить блок с новой картинкой
+const cardList = document.querySelector('.element'); //находим список ul с классом element, чтобы туда поместить блок с новой карточкой
 
 addButtonCards.addEventListener('click', function() {
   popupCards.classList.add('popup-cards_opened');
@@ -93,6 +92,7 @@ const  initialCards = [
   },
 ];
 
+// функция создания элемента
 const makeElement = function(tagName, className, text){
   const element = document.createElement(tagName);
   element.classList.add(className);
@@ -101,8 +101,9 @@ const makeElement = function(tagName, className, text){
   return element;
 };
 
+// функция создания карточки. Динамически собирается на странице браузера
 const createCard = function(card){
-  const listItem = makeElement('li', 'element__item');//создали новый li
+  const listItem = makeElement('li', 'element__item');//создаем новый li
 
   const img = makeElement('img', 'element__image'); // создаем переменную для новой карточки
   img.src = card.link; // добавляем ссылку на карточку
@@ -130,16 +131,36 @@ const createCard = function(card){
 
 for (let i = 0; i < initialCards.length; i ++){
   let cardItem = createCard(initialCards[i]);
-  cardList.appendChild(cardItem);
+  cardList.appendChild(cardItem); // добавление карточки на страницу
 }
 
+// ==============
+const element = document.querySelector('.element'); //находим родительский элемент кнопок на карточке
+
+const popupImage = document.querySelector('.popup-image');
+const openButtonImage = popupImage.querySelector('.element__image'); // попап с картинкой открывается при нажатии на изображение
+const closeButtonImage = popupImage.querySelector('.popup-image__close-icon'); // кнопка закрытия
+const popupImagePhoto = popupImage.querySelector('.popup-image__photo');
+const popupImageFigcap = popupImage.querySelector('.popup-image__figcap');
+
+// открытие попапа с картинкой при клике на изображение
+element.addEventListener('click', (evt) => {
+  if (evt.target.classList.contains('element__image')) {
+    popupImagePhoto.src=evt.target.src;
+    popupImagePhoto.alt=evt.target.alt;
+    popupImageFigcap.textContent=evt.target.alt;
+    popupImage.classList.add('popup-image_opened');
+  }
+});
+
+// закрытие попапа с картинкой
+closeButtonImage.addEventListener('click', function() {
+  popupImage.classList.remove('popup-image_opened');
+});
 
 // ==============
 
-
-const element = document.querySelector('.element'); //находим родительский элемент
-
-//Вешаем на родительский элемент обработчик событий лайка (поставить/удалить)
+//Вешаем на родительский элемент (element) обработчик событий лайка (поставить/удалить)
 element.addEventListener('click', (evt) => {
   if (evt.target.classList.contains('element__heart-button')) { // создаем условие - если есть evt.target и класс 'element__heart-button', то при нажатии происходит переключение на класс _active, и наоборот
     evt.target.classList.toggle('element__heart-button_active'); // toogle - переключает один класс на другой при клике
@@ -148,7 +169,7 @@ element.addEventListener('click', (evt) => {
 
 //Вешаем на родительский элемент обработчик событий удаления карточки
 element.addEventListener('click', (evt) => {
-  if (evt.target.classList.contains('element__trash-button')) { // создаем условие - если есть evt.target и класс 'element__trash-button', то при нажатии на кнопку происходит удаление родительского элемента
+  if (evt.target.classList.contains('element__trash-button')) { // создаем условие - если есть evt.target и класс 'element__trash-button', то при нажатии на кнопку происходит удаление элемента
     evt.target.closest('.element__item').remove();
   }
 });
