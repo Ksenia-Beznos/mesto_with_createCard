@@ -1,4 +1,4 @@
-.popup {
+.popup-image {
   margin: 0 auto;
   width: 100%;
   position: fixed;
@@ -10,14 +10,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
   opacity: 0;
   visibility: hidden;
   transition: visibility .5s, opacity .5s linear;
-}
-
-@media screen and (max-width: 550px) {
-  .popup {
-    max-width: 100%;
-    min-height: 568px;
-  }
 }
