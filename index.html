@@ -28,7 +28,7 @@
       </div>
     </section>
 
-    <!-- секция с карточками динамически собирается на странице в браузере (см. index.js) -->
+    <!-- секция с карточками (остальное ниже в template) -->
     <section class="elements">
       <ul class="element">
       </ul>
@@ -45,34 +45,46 @@
       <button class="popup__close-icon" type="button" aria-label="Закрыть"></button>
       <h2 class="popup__heading">Редактировать профиль</h2>
       <form class="popup__form" name="profile__form">
-        <input class="popup__input popup__input_type_name" type="text" name="nameInput" placeholder="Имя">
-        <input class="popup__input popup__input_type_job" type="text" name="jobInput" placeholder="О себе">
+        <input class="popup__input popup__input_type_name" type="text" name="nameInput" placeholder="Имя" required>
+        <input class="popup__input popup__input_type_job" type="text" name="jobInput" placeholder="О себе" required>
         <button class="popup__submit-button" type="submit" aria-label="Сохранить">Сохранить</button>
       </form>
     </div>
   </div>
 
-  <div class="popup-cards">
-    <div class="popup-cards__container">
-      <button class="popup-cards__close-icon" type="button" aria-label="Закрыть"></button>
-      <h2 class="popup-cards__heading">Новое место</h2>
-      <form class="popup-cards__form" name="profile__form-cards">
-        <input class="popup-cards__input popup-cards__input_type_title" type="text" name="titleInput" placeholder="Название">
-        <input class="popup-cards__input popup-cards__input_type_link" type="text" name="linkInput" placeholder="Ссылка на картинку">
-        <button class="popup-cards__submit-button" type="submit" aria-label="Сохранить">Сохранить</button>
+  <div class="popup popup_type_cards">
+    <div class="popup__container">
+      <button class="popup__close-icon popup__close-icon_type_cards" type="button" aria-label="Закрыть"></button>
+      <h2 class="popup__heading">Новое место</h2>
+      <form class="popup__form popup__form_type_cards" name="profile__form-cards">
+        <input class="popup__input popup__input_type_title" type="text" name="titleInput" placeholder="Название" required>
+        <input class="popup__input popup__input_type_link" type="url" name="linkInput" placeholder="Ссылка на картинку" required>
+        <button class="popup__submit-button" type="submit" aria-label="Сохранить">Сохранить</button>
       </form>
     </div>
   </div>
 
-  <div class="popup-image">
-    <figure class="popup-image__container">
-      <img class="popup-image__photo">
-      <figcaption class="popup-image__figcap"></figcaption>
-      <button class="popup-image__close-icon" type="button" aria-label="Закрыть"></button>
+  <div class="popup popup_type_image">
+    <figure class="popup__container-image">
+      <img class="popup__photo">
+      <figcaption class="popup__figcap"></figcaption>
+      <button class="popup__close-icon popup__close-icon_type_image" type="button" aria-label="Закрыть"></button>
     </figure>
   </div>
 
+  <template id="template-element">
+    <li class="element__item">
+      <img class="element__image" src="" alt="">
+      <div class="element__mask-group">
+        <h2 class="element__title"></h2>
+        <button class="element__heart-button" type="button"></button>
+        <button class="element__trash-button" type="button"></button>
+      </div>
+    </li>
+  </template>
+
 </div>
+<script src="./scripts/cards.js"></script>
 <script src="./scripts/index.js"></script>
 </body>
 </html>
